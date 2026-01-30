@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
   res.send('Hello from my Express server!'); 
 });
 
-// Define a route for GET requests to ('/about') 
+// Define a route for GET requests to the about page ('/about') 
 app.get('/about', (req, res) => { 
   res.send('Hello from the About!'); 
 });
@@ -28,13 +28,13 @@ const products = [
   {id: 5, name: 'Product 5', price: 99}, 
 ];
 
-// Define a route for GET requests to ('/api/products') 
+// Define a route for GET requests to the products api endpoint ('/api/products') 
 app.get('/api/products', (req, res) => { 
   //res.send('Hello from the Products!'); 
   res.json(products);
 });
 
-// Define a route for GET requests to ('/api/products/{id}') 
+// Define a route for GET requests to single product api endpoint ('/api/products/{id}') 
 app.get('/api/products/:id', (req, res) => { 
   // Get the ID from the request parameters. Note: it will be a string. 
   const pid = parseInt(req.params.id); 

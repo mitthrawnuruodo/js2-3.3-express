@@ -12,6 +12,7 @@ app.get('/', (req, res) => {
   res.send('Hello from my Express server!'); 
 });
 
+// Define a route for GET requests to ('/about') 
 app.get('/about', (req, res) => { 
   res.send('Hello from the About!'); 
 });
@@ -25,11 +26,13 @@ const products = [
   {id: 5, name: 'product 5'}, 
 ];
 
+// Define a route for GET requests to ('/api/products') 
 app.get('/api/products', (req, res) => { 
   //res.send('Hello from the Products!'); 
   res.json(products);
 });
 
+// Define a route for GET requests to ('/api/products/{id}') 
 app.get('/api/products/:id', (req, res) => { 
   // Get the ID from the request parameters. Note: it will be a string. 
   const pid = parseInt(req.params.id); 

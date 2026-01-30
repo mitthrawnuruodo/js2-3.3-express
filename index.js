@@ -4,7 +4,9 @@ const express = require('express');
 // Create an instance of an Express application 
 const app = express();
 const port = 4242;
-app.use(express.json());
+
+// Needed for req.body later on
+//app.use(express.json());
 
 // Define a route for GET requests to the root URL ('/') 
 app.get('/', (req, res) => { 
@@ -19,11 +21,11 @@ app.get('/about', (req, res) => {
 
 // Mock database with products
 const products = [
-  {id: 1, name: 'product 1'}, 
-  {id: 2, name: 'product 2'}, 
-  {id: 3, name: 'product 3'}, 
-  {id: 4, name: 'product 4'}, 
-  {id: 5, name: 'product 5'}, 
+  {id: 1, name: 'Product 1', price: 129}, 
+  {id: 2, name: 'Product 2', price: 229}, 
+  {id: 3, name: 'Product 3', price: 299}, 
+  {id: 4, name: 'Product 4', price: 149}, 
+  {id: 5, name: 'Product 5', price: 99}, 
 ];
 
 // Define a route for GET requests to ('/api/products') 
